@@ -14,13 +14,13 @@ const personaSchema = new mongoose.Schema({
   characteristics: { type: Array, required: true },
   name: { type: String, default: "" },
   age: { type: Number },
-  occupation: { type: String, default: "" },
-  hobbies: { type: String, default: "" },
-  goals: { type: String, default: "" },
-  frustrations: { type: String, default: "" },
-  slider1: { type: Number, required: true, default: 50 },
-  slider2: { type: Number, required: true, default: 50 },
-  slider3: { type: Number, required: true, default: 50 },
+  occupationAndHobbies: { type: String, default: "" },
+  technologyUsage: { type: String, default: "" },
+  sliders: {
+    type: [Number],
+    required: true,
+    default: [50, 50, 50],
+  },
 });
 
 personaSchema.index({ userId: 1, cardId: 1 }, { unique: true });

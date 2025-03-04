@@ -15,15 +15,15 @@ app.use(cors());
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/ideas", require("./routes/ideaRoutes"));
 app.use("/api/personas", require("./routes/personaRoutes"));
-app.use("/api/personaCards", require("./routes/personaCardRoutes"));
+app.use("/api/persona-cards", require("./routes/personaCardRoutes"));
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
 app.use("/api/define", require("./routes/defineRoutes"));
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.error(err));
+	.connect(process.env.MONGO_URI)
+	.then(() => console.log("MongoDB Connected"))
+	.catch((err) => console.error(err));
 
 // Start the server
 const PORT = process.env.PORT || 5001;

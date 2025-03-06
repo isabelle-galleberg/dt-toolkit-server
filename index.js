@@ -18,6 +18,7 @@ app.use("/api/personas", require("./routes/personaRoutes"));
 app.use("/api/persona-cards", require("./routes/personaCardRoutes"));
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
 app.use("/api/define", require("./routes/defineRoutes"));
+app.use("/api/spot-scam", require("./routes/spottedScamRoutes"));
 
 // Connect to MongoDB
 mongoose

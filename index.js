@@ -19,12 +19,13 @@ app.use("/api/persona-cards", require("./routes/personaCardRoutes"));
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
 app.use("/api/define", require("./routes/defineRoutes"));
 app.use("/api/spot-scam", require("./routes/spottedScamRoutes"));
+app.use("/api/problem-statement", require("./routes/problemStatementRoutes"));
 
 // Connect to MongoDB
 mongoose
-	.connect(process.env.MONGO_URI)
-	.then(() => console.log("MongoDB Connected"))
-	.catch((err) => console.error(err));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error(err));
 
 // Start the server
 const PORT = process.env.PORT || 5001;

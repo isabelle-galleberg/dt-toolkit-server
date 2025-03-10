@@ -2,9 +2,13 @@ const Emotions = require("../models/Emotions");
 
 exports.getEmotions = async (req, res) => {
 	try {
-		const emotionsData = await Emotions.findOne({ userId: req.user.id });
+		let emotionsData = await Emotions.findOne({ userId: req.user.id });
 		if (!emotionsData) {
-			return res.status(404).json({ message: "Emotions not found" });
+			emotionsData = new Emotions({
+				userId: req.user.id,
+				emotions: [],
+			});
+			await emotionsData.save();
 		}
 
 		res.status(200).json(emotionsData.emotions);

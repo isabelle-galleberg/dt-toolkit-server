@@ -7,12 +7,12 @@ const storySchema = new mongoose.Schema({
 		required: true,
 	},
 	storyline: { type: [[String]], required: true },
-	imgHappy: { type: String, required: true },
-	imgSad: { type: String, required: true },
-	imgDisappointed: { type: String, required: true },
-	imgSuprised: { type: String, required: true },
-	imgAngry: { type: String, required: true },
-	imgScared: { type: String, required: true },
+	happyImg: { type: String, required: true },
+	sadImg: { type: String, required: true },
+	disapointedImg: { type: String, required: true },
+	surprisedImg: { type: String, required: true },
+	angryImg: { type: String, required: true },
+	scardImg: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Story", storySchema);

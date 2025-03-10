@@ -5,7 +5,6 @@ const personaCardSchema = new mongoose.Schema({
 	cardImageUrl: { type: String, required: true },
 	personaImageUrl: { type: String, required: true },
 	traits: { type: Array, required: true },
-	storyline: { type: [[String]], required: true },
 });
 
 module.exports = mongoose.model("PersonaCard", personaCardSchema);

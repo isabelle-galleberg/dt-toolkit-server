@@ -9,10 +9,10 @@ const storySchema = new mongoose.Schema({
 	storyline: { type: [[String]], required: true },
 	happyImg: { type: String, required: true },
 	sadImg: { type: String, required: true },
-	disapointedImg: { type: String, required: true },
+	disappointedImg: { type: String, required: true },
 	surprisedImg: { type: String, required: true },
 	angryImg: { type: String, required: true },
-	scardImg: { type: String, required: true },
+	scaredImg: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Story", storySchema);

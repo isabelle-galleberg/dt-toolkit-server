@@ -23,6 +23,10 @@ app.use("/api/spot-scam", require("./routes/spottedScamRoutes"));
 app.use("/api/problem-statement", require("./routes/problemStatementRoutes"));
 app.use("/api/question-card", require("./routes/questionCardRoutes"));
 app.use("/api/emotions", require("./routes/emotionRoutes"));
+app.use(
+  "/api/problem-understanding",
+  require("./routes/problemUnderstandingRoutes")
+);
 
 // Connect to MongoDB
 mongoose

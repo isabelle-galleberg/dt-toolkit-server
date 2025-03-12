@@ -14,6 +14,7 @@ exports.addCard = async (req, res) => {
 		alias: req.body.alias,
 		cardImageUrl: req.body.cardImageUrl,
 		personaImageUrl: req.body.personaImageUrl,
+		phoneImageUrl: req.body.phoneImageUrl,
 		traits: req.body.traits,
 	});
 

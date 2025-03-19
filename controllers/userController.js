@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 exports.registerUser = async (req, res) => {
-	let { username, password } = req.body;
+	let { username, password, page = "/" } = req.body;
 
 	try {
 		if (!username || username.trim() === "") {
@@ -22,6 +22,7 @@ exports.registerUser = async (req, res) => {
 		const newUser = new User({
 			username,
 			password,
+			page,
 		});
 		await newUser.save();
 
@@ -56,6 +57,18 @@ exports.getMe = async (req, res) => {
 	try {
 		const user = await User.findById(req.user.id).select("-password");
 		res.status(200).json(user);
+	} catch (err) {
+		res.status(500).json({ message: "Server error" });
+	}
+};
+
+exports.updatePage = async (req, res) => {
+	const { page } = req.body;
+	try {
+		const user = await User.findById(req.user.id);
+		user.page = page;
+		await user.save();
+		res.status(200).json({ message: "Page updated successfully" });
 	} catch (err) {
 		res.status(500).json({ message: "Server error" });
 	}

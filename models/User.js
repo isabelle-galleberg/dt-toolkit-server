@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema(
 			required: true,
 		},
 		password: { type: String, required: true },
+		page: { type: String, required: true, default: "/" },
 	},
 	{ timestamps: true }
 );

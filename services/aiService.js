@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function getAIFeedback(checklist) {
 	const prompt = `
-You are giving feedback to an 11-year-old student on their phishing detection checklist. 
+You are giving feedback to an 11-year-old student on their phishing detection checklist for emails. 
 - First, say what they did well in a simple and friendly way. 
 - Then, give one or two easy suggestions to help them improve. 
 - Use short, clear sentences and no difficult words. 

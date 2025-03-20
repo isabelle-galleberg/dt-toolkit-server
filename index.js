@@ -13,21 +13,17 @@ app.use(cors());
 
 // Routes
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/ideas", require("./routes/ideaRoutes"));
-app.use("/api/personas", require("./routes/personaRoutes"));
 app.use("/api/persona-cards", require("./routes/personaCardRoutes"));
+app.use("/api/personas", require("./routes/personaRoutes"));
+app.use("/api/emotions", require("./routes/emotionRoutes"));
 app.use("/api/stories", require("./routes/storyRoutes"));
-app.use("/api/feedback", require("./routes/feedbackRoutes"));
-app.use("/api/define", require("./routes/defineRoutes"));
 app.use("/api/spot-scam", require("./routes/spottedScamRoutes"));
 app.use("/api/problem-statement", require("./routes/problemStatementRoutes"));
-app.use("/api/question-card", require("./routes/questionCardRoutes"));
-app.use("/api/emotions", require("./routes/emotionRoutes"));
-app.use("/api/checklist", require("./routes/checklistRoutes"));
 app.use(
 	"/api/problem-understanding",
 	require("./routes/problemUnderstandingRoutes")
 );
+app.use("/api/checklist", require("./routes/checklistRoutes"));
 
 // Connect to MongoDB
 mongoose

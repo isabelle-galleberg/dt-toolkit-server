@@ -9,7 +9,7 @@ You are giving feedback to an 11-year-old student on their phishing detection ch
 - If some points are too similar, gently suggest how they can make them different.
 - Avoid using numbered lists in your response.
 - Do not mention how many items are on the list.
-- If none of the points on the checklist are relevant to phishing detection, mention that in your response and do not provide positive feedback. 
+- If any of the items on the checklist are not relevant to phishing detection, suggest that they remove them as an improvement. 
 
 Checklist:
 ${checklist.join("\n")}

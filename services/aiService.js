@@ -2,15 +2,13 @@ const axios = require("axios");
 
 async function getAIFeedback(checklist) {
 	const prompt = `
-You are giving feedback to an 11-year-old student on their phishing detection checklist for emails. 
-- First, say what they did well in a simple and friendly way. 
-- Then, give one or two easy suggestions to help them improve. 
-- Use short, clear sentences and no difficult words. 
-- If some points are too similar, gently suggest how they can make them different.
-- Avoid using numbered lists in your response.
-- Do not mention how many items are on the list.
-- If any of the items on the checklist are not relevant to phishing detection, suggest that they remove them as an improvement. 
+You’re giving feedback to an 11-year-old student on their phishing detection checklist for emails.
 
+Start by saying what they did well in a simple and friendly way, but only if the checklist contains useful information. If the checklist is too vague, like just saying "blabla," explain gently that they need to add more specific points to help detect phishing. Offer one or two easy suggestions for improvement, and encourage them to be more specific.
+
+Use short, clear sentences and avoid difficult words. If some points are too similar, kindly suggest how they can make them different. If any items on the checklist aren’t relevant to phishing detection, suggest they remove them.
+
+Avoid using numbered lists, and don’t mention how many items are on the list. Also, don’t mention the point that asks about personal information, as it’s already included.
 Checklist:
 ${checklist.join("\n")}
 

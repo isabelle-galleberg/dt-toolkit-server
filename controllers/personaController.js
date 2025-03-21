@@ -14,7 +14,7 @@ exports.getPersona = async (req, res) => {
 				age: null,
 				occupationAndHobbies: "",
 				technologyUsage: "",
-				sliders: [0, 0, 0, 0, 0, 0],
+				sliders: [50, 50, 50, 50, 50, 50],
 				traits: [],
 			});
 		}

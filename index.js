@@ -20,16 +20,17 @@ app.use("/api/stories", require("./routes/storyRoutes"));
 app.use("/api/spot-scam", require("./routes/spottedScamRoutes"));
 app.use("/api/problem-statement", require("./routes/problemStatementRoutes"));
 app.use(
-	"/api/problem-understanding",
-	require("./routes/problemUnderstandingRoutes")
+  "/api/problem-understanding",
+  require("./routes/problemUnderstandingRoutes")
 );
 app.use("/api/checklist", require("./routes/checklistRoutes"));
+app.use("/api/feedback", require("./routes/feedbackRoutes"));
 
 // Connect to MongoDB
 mongoose
-	.connect(process.env.MONGO_URI)
-	.then(() => console.log("MongoDB Connected"))
-	.catch((err) => console.error(err));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error(err));
 
 // Start the server
 const PORT = process.env.PORT || 5001;

@@ -12,6 +12,8 @@ const feedbackSchema = new mongoose.Schema({
     required: true,
   },
   feedback: { type: [String], default: [] },
+  score: { type: Number, default: 0 },
+  testCompleted: { type: Boolean, default: false },
 });
 
 feedbackSchema.index({ userId: 1, cardId: 1 }, { unique: true });

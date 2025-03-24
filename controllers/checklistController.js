@@ -1,5 +1,5 @@
 const Checklist = require("../models/Checklist");
-const { getAIFeedback } = require("../services/aiService");
+const { getAIFeedback } = require("../services/feedbackService");
 
 exports.getChecklist = async (req, res) => {
 	try {

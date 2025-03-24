@@ -24,6 +24,7 @@ app.use(
   require("./routes/problemUnderstandingRoutes")
 );
 app.use("/api/checklist", require("./routes/checklistRoutes"));
+app.use("/api/ai-feedback", require("./routes/aiFeedbackRoutes"));
 app.use("/api/feedback", require("./routes/feedbackRoutes"));
 
 // Connect to MongoDB

@@ -11,6 +11,8 @@ exports.getFeedback = async (req, res) => {
         userId: req.user.id,
         cardId: req.params.cardId,
         feedback: [],
+        score: 0,
+        testCompleted: false,
       });
     }
     res.status(200).json(feedback);
@@ -31,6 +33,40 @@ exports.upsertFeedback = async (req, res) => {
     );
 
     res.status(200).json(savedFeedback);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.updateTestResults = async (req, res) => {
+  try {
+    const { cardId, score, testCompleted } = req.body;
+    const userId = req.user?.id;
+
+    const updatedFeedback = await Feedback.findOneAndUpdate(
+      { userId, cardId },
+      { score, testCompleted },
+      { new: true, upsert: true }
+    );
+
+    res.status(200).json(updatedFeedback);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.resetTest = async (req, res) => {
+  try {
+    const { cardId } = req.body;
+    const userId = req.user?.id;
+
+    const updatedFeedback = await Feedback.findOneAndUpdate(
+      { userId, cardId },
+      { score: 0, testCompleted: false },
+      { new: true }
+    );
+
+    res.status(200).json(updatedFeedback);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

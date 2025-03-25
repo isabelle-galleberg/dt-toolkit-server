@@ -16,6 +16,8 @@ async function getAIHints(scamsDetected) {
 
     If all six points are covered, reply with "Well done" and no hint. If any of the points are missing, provide one relevant hint based on the missing or incomplete point.
     The hint should be brief and relevant to the detected scams.
+    Do not answer with bold text. 
+    Just answer with the hint, do not add "Hint:" or any other prefix.
   `;
 
 	try {

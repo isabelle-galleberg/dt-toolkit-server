@@ -28,7 +28,7 @@ Do not provide more than two strengths or two improvements.
 		const response = await axios.post(
 			"https://api.openai.com/v1/chat/completions",
 			{
-				model: "gpt-3.5-turbo",
+				model: "gpt-4o-mini",
 				messages: [
 					{
 						role: "system",

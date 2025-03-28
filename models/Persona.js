@@ -15,7 +15,9 @@ const personaSchema = new mongoose.Schema({
 	name: { type: String, default: "" },
 	age: { type: Number },
 	occupationAndHobbies: { type: String, default: "" },
-	technologyUsage: { type: String, default: "" },
+	hopes: { type: String, default: "" },
+	challenges: { type: String, default: "" },
+	quote: { type: String, default: "" },
 	sliders: {
 		type: [Number],
 		required: true,
